@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock,Paper,Scissor Game</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./rock.css">
  </head>
  <body>
     <section class="container max-w-5xl mx-auto py-12 border">
    <h1 class="text-center text-5xl mt-12 font-bold ">Let'play!!!</h1>
    <div class="grid grid-cols-5 mt-12">
+       <!--------------- USER SCORE --------------------->
       <div class="text-center">
-         <div>
+         <div class="relative">
             <p class="text-2xl font-light">Your Score</p>
             <p id="userScore" class="text-5xl font-bold mt-3">0</p>
-            <div id="userFireWork" class="firework hidden"></div>
+            <div id="userFireWork" class="firework hidden "></div>
          </div>
          <div class="mt-5">
             <button  disabled class="gameControls userControls disabled:opacity-30 disabled:pointer-events-none mb-5 w-full p-6 border-2 border-gray-200 hover:border-green-600 rounded-3xl transition-all duration-200 hover:shadow-lg active:bg-green-200">
@@ -31,6 +33,7 @@
              </button>
          </div>
       </div>
+      <!--------------- MIDDLE SECTION ------------------>
       <div class="col-span-3  flex items-center ">
          <div class=" w-full  text-center px-10">
             <p id="roundID" class=" hidden text-xl uppercase font-bold mb-6">round - <span>1</span> </p>
@@ -50,12 +53,14 @@
             </button>
             <button id="initButton" class="hidden flex mx-auto bg-purple-500 px-10 py-3 text-white rounded-lg text-2xl font-semibold hover:bg-purple-600 active:bg-purple-900 transition-all duration-200 hover:shadow-lg ">Play Again
             </button>
+            <p id="errorMessagePara" class="text-center text-red-600 mt-4"></p>
          </div>
       </div>
+      <!--------------- COMPUTER SCORE ------------------>
       <div class="text-center"> 
-         <div>
+         <div class="relative">
             <p class="text-2xl font-light">Computer Score</p>
-            <p id="userScore" class="text-5xl font-bold mt-3">0</p>
+            <p id="computerScore" class="text-5xl font-bold mt-3">0</p>
             <div id="computerFireWork" class="firework hidden"></div>
          </div>
          <div class="mt-5">
@@ -75,12 +80,13 @@
          
       </div>
    </div>
+   <!--------------- BUTTONS ------------------>
    <div class="flex justify-between ">
       <button class="p-1 px-3 text-sm font-semibold rounded-3xl shadow-sm bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 border border-opacity-10 hover:shadow-lg coursor-pointer transition-all duration-200">Reset Game</button>
-      <button class="p-1 px-3 text-sm font-semibold rounded-3xl shadow-sm bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 border border-opacity-10 hover:shadow-lg coursor-pointer transition-all duration-200">How to Play</button>
-     <div id="popup" class=" fixed top-0 left-0 w-full h-screen bg-black/50 flex items-center justify-center hidden">
+      <button onclick="openpopup()" class="p-1 px-3 text-sm font-semibold rounded-3xl shadow-sm bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 border border-opacity-10 hover:shadow-lg coursor-pointer transition-all duration-200">How to Play</button>
+     <div id="popup" class=" hidden fixed top-0 left-0 w-full h-screen bg-black/50 flex items-center justify-center ">
          <div class="max-w-3xl bg-white p-10 rounded-3xl relative shadow-mg">
-           <button class=" absolute right-5 top-5 text-gray-600">
+           <button onclick="closepopup()" id="closebutton" class=" absolute right-5 top-5 text-gray-600">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
              </svg>             
@@ -156,6 +162,6 @@
      </div>
    </div>
     </section>
-   
+  <script src="./rock.js"></script>
  </body>
  </html>
