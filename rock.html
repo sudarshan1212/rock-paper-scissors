@@ -40,19 +40,19 @@
             <p id="countDown" class=" hidden text-5xl mb-4">4</p>
             <div id="roundsSelectContainer">
                <label for="roundSelect">Choose Rounds</label>
-               <select id="roundSelect" class="mt-2 mb-6 w-full border-4 rounded-2xl p-4 text-center text-lg max-w-xs flex mx-auto">
-                  <option value="">Choose One</option>
+               <select id="roundSelect" class="roundselect mt-2 mb-6 w-full border-4 rounded-2xl p-4 text-center text-lg max-w-xs flex mx-auto">
+                  <option value="">- Choose one -</option>
                   <option value="5">5</option>
                   <option value="10">10</option>
                   <option value="15">15</option>
                </select>
             </div>
-            <button id="playButton" class="flex mx-auto bg-purple-500 px-10 py-3 text-white rounded-lg text-2xl font-semibold hover:bg-purple-600 active:bg-purple-900 transition-all duration-200 hover:shadow-lg">Start
-            </button>
-            <button id="nextRoundButton" class="hidden flex mx-auto bg-purple-500 px-10 py-3 text-white rounded-lg text-2xl font-semibold hover:bg-purple-600 active:bg-purple-900 transition-all duration-200 hover:shadow-lg ">Play
-            </button>
-            <button id="initButton" class="hidden flex mx-auto bg-purple-500 px-10 py-3 text-white rounded-lg text-2xl font-semibold hover:bg-purple-600 active:bg-purple-900 transition-all duration-200 hover:shadow-lg ">Play Again
-            </button>
+            <button onclick="startgame()" id="playButton" class="flex mx-auto bg-purple-500 px-10 py-3 text-white rounded-lg text-2xl font-semibold hover:bg-purple-600 active:bg-purple-900 transition-all duration-200 hover:shadow-lg">
+               Start</button>
+            <button id="nextRoundButton" class="hidden flex mx-auto bg-purple-500 px-10 py-3 text-white rounded-lg text-2xl font-semibold hover:bg-purple-600 active:bg-purple-900 transition-all duration-200 hover:shadow-lg ">
+               Play</button>
+            <button onclick="init()" id="initButton" class="hidden flex mx-auto bg-purple-500 px-10 py-3 text-white rounded-lg text-2xl font-semibold hover:bg-purple-600 active:bg-purple-900 transition-all duration-200 hover:shadow-lg ">
+               Play Again </button>
             <p id="errorMessagePara" class="text-center text-red-600 mt-4"></p>
          </div>
       </div>
@@ -82,7 +82,7 @@
    </div>
    <!--------------- BUTTONS ------------------>
    <div class="flex justify-between ">
-      <button class="p-1 px-3 text-sm font-semibold rounded-3xl shadow-sm bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 border border-opacity-10 hover:shadow-lg coursor-pointer transition-all duration-200">Reset Game</button>
+      <button onclick="init()" class="p-1 px-3 text-sm font-semibold rounded-3xl shadow-sm bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 border border-opacity-10 hover:shadow-lg coursor-pointer transition-all duration-200">Reset Game</button>
       <button onclick="openpopup()" class="p-1 px-3 text-sm font-semibold rounded-3xl shadow-sm bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 border border-opacity-10 hover:shadow-lg coursor-pointer transition-all duration-200">How to Play</button>
      <div id="popup" class=" hidden fixed top-0 left-0 w-full h-screen bg-black/50 flex items-center justify-center ">
          <div class="max-w-3xl bg-white p-10 rounded-3xl relative shadow-mg">
