@@ -41,6 +41,7 @@ function init(){
 function startgame(){
     if(roundSelect.value===""){
        disaplayError("Choose number of ROunds")
+       return
     }
     hide([playButton,roundsSelectContainer])
     show([countDown,roundID])
