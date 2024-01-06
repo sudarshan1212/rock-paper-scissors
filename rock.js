@@ -8,9 +8,9 @@ playButton=document.querySelector("#playButton")
 nextRoundButton=document.querySelector("#nextRoundButton")
 initButton=document.querySelector("#initButton")
 
-gameControls=document.querySelectorAll("#gameControls")
-userControls=document.querySelectorAll("#userControls")
-computerControls=document.querySelectorAll("#computerControls")
+gameControls=document.querySelectorAll(".gameControls")
+userControls=document.querySelectorAll(".userControls")
+computerControls=document.querySelectorAll(".computerControls")
 
 roundID=document.querySelector("#roundID")
 // roundspan=roundID.querySelector("span")
@@ -52,14 +52,21 @@ function startgame(){
 }
 function triggerCountDown(){
     if(+countDown.innerText>1){
-countDown.innerText=+countDown.innerText-1
+countDown.innerText=+countDown.innerText-3
 setTimeout(() => {
    triggerCountDown()
 }, DELAY);
     }else{
         countDown.innerText="GO!!!"
         removeclasses([countDown],["animate-[bounce_1s_ease-in-out_infinite]"])
+        enable(gameControls)
     }
+}
+function enable(elements){
+    elements.forEach((element) => {
+        element.disabled=false
+    });
+
 }
 
 function openpopup(){
