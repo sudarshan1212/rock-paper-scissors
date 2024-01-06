@@ -19,15 +19,15 @@
             <div id="userFireWork" class="firework hidden "></div>
          </div>
          <div class="mt-5">
-            <button  disabled class="gameControls userControls disabled:opacity-30 disabled:pointer-events-none mb-5 w-full p-6 border-2 border-gray-200 hover:border-green-600 rounded-3xl transition-all duration-200 hover:shadow-lg active:bg-green-200">
+            <button  disabled onclick="select(1)" class="gameControls userControls disabled:opacity-30 disabled:pointer-events-none mb-5 w-full p-6 border-2 border-gray-200 hover:border-green-600 rounded-3xl transition-all duration-200 hover:shadow-lg active:bg-green-200">
               <img src="assets\rock.svg" class="mx-auto w-16 " alt="" >
               <p class="pt-1 text-3xl font-thin">Rock</p>
             </button>
-            <button  disabled class="gameControls userControls disabled:opacity-30 disabled:pointer-events-none mb-5 w-full p-6 border-2 border-gray-200 hover:border-green-600 rounded-3xl transition-all duration-200 hover:shadow-lg active:bg-green-200">
+            <button  disabled onclick="select(2)" class="gameControls userControls disabled:opacity-30 disabled:pointer-events-none mb-5 w-full p-6 border-2 border-gray-200 hover:border-green-600 rounded-3xl transition-all duration-200 hover:shadow-lg active:bg-green-200">
                <img src="assets\paper.svg" class="mx-auto w-16 " alt="" >
                <p class="pt-1 text-3xl font-thin">Paper</p>
              </button>
-             <button  disabled class="gameControls userControls disabled:opacity-30 disabled:pointer-events-none mb-5 w-full p-6 border-2 border-gray-200 hover:border-green-600 rounded-3xl transition-all duration-200 hover:shadow-lg active:bg-green-200">
+             <button  disabled onclick="select(3)" class="gameControls userControls disabled:opacity-30 disabled:pointer-events-none mb-5 w-full p-6 border-2 border-gray-200 hover:border-green-600 rounded-3xl transition-all duration-200 hover:shadow-lg active:bg-green-200">
                <img src="assets\scissor.svg" class="mx-auto w-16 " alt="" >
                <p class="pt-1 text-3xl font-thin">Scissor</p>
              </button>
@@ -42,14 +42,14 @@
                <label for="roundSelect">Choose Rounds</label>
                <select id="roundSelect" class="roundselect mt-2 mb-6 w-full border-4 rounded-2xl p-4 text-center text-lg max-w-xs flex mx-auto">
                   <option value="">- Choose one -</option>
-                  <option value="5">5</option>
+                  <option value="3">3</option>
                   <option value="10">10</option>
                   <option value="15">15</option>
                </select>
             </div>
             <button onclick="startgame()" id="playButton" class="flex mx-auto bg-purple-500 px-10 py-3 text-white rounded-lg text-2xl font-semibold hover:bg-purple-600 active:bg-purple-900 transition-all duration-200 hover:shadow-lg">
                Start</button>
-            <button id="nextRoundButton" class="hidden flex mx-auto bg-purple-500 px-10 py-3 text-white rounded-lg text-2xl font-semibold hover:bg-purple-600 active:bg-purple-900 transition-all duration-200 hover:shadow-lg ">
+            <button onclick="nextROund()" id="nextRoundButton" class="hidden flex mx-auto bg-purple-500 px-10 py-3 text-white rounded-lg text-2xl font-semibold hover:bg-purple-600 active:bg-purple-900 transition-all duration-200 hover:shadow-lg ">
                Play</button>
             <button onclick="init()" id="initButton" class="hidden flex mx-auto bg-purple-500 px-10 py-3 text-white rounded-lg text-2xl font-semibold hover:bg-purple-600 active:bg-purple-900 transition-all duration-200 hover:shadow-lg ">
                Play Again </button>
