@@ -33,9 +33,9 @@ function init(){
     isGameStarted=false;
     userScore.innerText="0";
     computerScore.innerText="0";
-     show([playButton,roundsSelectContainer])
-      hide([countDown,roundID,nextRoundButton,initButton])
-     roundSelect.value="3"   
+    show([playButton,roundsSelectContainer])
+    hide([countDown,roundID,nextRoundButton,initButton])
+    roundSelect.value="3"   
 }
 function startgame(){
     if(roundSelect.value===""){
@@ -117,18 +117,10 @@ show([initButton])
 }
 
 }
-
-
-
-
-
-
 function updateScore(element){
     countDown.innerText=""
     element.innerText= +element.innerText+1
 }
-
-
 
 function enable(elements,delay){
     setTimeout(() => {
