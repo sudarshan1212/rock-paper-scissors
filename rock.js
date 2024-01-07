@@ -93,7 +93,6 @@ if(userInput===computerInput){
 }prepareForNextRound()
 
 }
-
 function prepareForNextRound(){
 if(currentROund<numberofRound){
     setTimeout(() => {
