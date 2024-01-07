@@ -89,31 +89,38 @@ if(userInput===computerInput){
     updateScore(computerScore)
     show([computerFireWork])
     hide([computerFireWork],1000) 
+}
+    if(currentROund<numberofRound){
+        prepareForNextRound()
+    }else{
+    GmaeOVer()
+    show([initButton])
+}
+function GmaeOVer(){
+    const userSoreValue=+this.userScore.innerText
+    const computerSoreValue=+this.computerScore.innerText
+    if(userSoreValue==computerSoreValue){
+     
+        countDown.innerText="Game Over. It was Draw"
+    }else if(userSoreValue>computerSoreValue){
+        countDown.innerText="Game Over. You Won!"
+    }else{
+        countDown.innerText="Game Over. You Lost"
+    }
     
-}prepareForNextRound()
-
+}
 }
 function prepareForNextRound(){
-if(currentROund<numberofRound){
+
     setTimeout(() => {
         currentROund++
         roundspan.innerText=currentROund
         show([nextRoundButton])
     }, 1000);
-}else{
+
 //Gameover
-const userSoreValue=+this.userScore.innerText
-const computerSoreValue=+this.computerScore.innerText
-if(userSoreValue==computerSoreValue){
- 
-    countDown.innerText="Game Over. It was Draw"
-}else if(userSoreValue>computerSoreValue){
-    countDown.innerText="Game Over. You Won!"
-}else{
-    countDown.innerText="Game Over. You Lost"
-}
-show([initButton])
-}
+
+
 
 }
 function updateScore(element){
