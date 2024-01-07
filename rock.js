@@ -25,8 +25,10 @@ computerFireWork=document.querySelector("#computerFireWork")
 LONG_DELAY=1500
 DELAY=10
 SHORT_DELAY=300
+isgamekeyenabled=false
 isGameStarted=false
 init();
+keyboard()
 currentROund=1
 
 function init(){
@@ -69,13 +71,19 @@ setTimeout(() => {
         countDown.innerText="GO!!!"
         removeclasses([countDown],["animate-[bounce_1s_ease-in-out_infinite]"])
         enable(gameControls)
+        isgamekeyenabled=true
     }
 }
+
 function select(userInput){
-    let computerInput=1
-    // let computerInput=Math.floor(Math.random()*3)+1
-   console.log({userInput,computerInput});  
+    showselection(userControls[userInput-1])
+
+    // let computerInput=1
+     let computerInput=Math.floor(Math.random()*3)+1
+//    console.log({userInput,computerInput});  
+   showselection(computerControls[computerInput-1])   
         disable(gameControls,SHORT_DELAY)    
+        isgamekeyenabled=false
 if(userInput===computerInput){
     countDown.innerText="DRAW"
 }else if((userInput===1 && computerInput===3)||
@@ -108,6 +116,12 @@ function GmaeOVer(){
         countDown.innerText="Game Over. You Lost"
     }
     
+}
+function showselection(control){
+addclasses([control],[ "border-green-600", "shadow-lg","bg-green-200"])
+setTimeout(() => {
+    removeclasses([control],[ "border-green-600", "shadow-lg","bg-green-200"])
+}, SHORT_DELAY);
 }
 }
 function prepareForNextRound(){
@@ -188,3 +202,26 @@ function disaplayError(msg){
             errorMessagePara.innerText=""
         }, LONG_DELAY);
 }
+ function keyboard(){
+    document.onkeydown=(events)=>{
+if(events.key==='Tab'){
+    events.preventDefault()
+}else if(events.key==='Escape'){
+    closepopup()
+}else if(events.key.toLowerCase()==='r' && isgamekeyenabled==true){
+    select(1)
+}else if(events.key.toLowerCase()==='p' && isgamekeyenabled==true){
+    select(2)
+}else if(events.key.toLowerCase()==='s' && isgamekeyenabled==true){
+    select(3)
+}else if(events.key===' '){
+  if(!playButton.classList.contains('hidden')){
+    startgame()
+  }else if(!nextRoundButton.classList.contains('hidden')){
+    nextROund()
+  }else if(!initButton.classList.contains('hidden')){
+    init()
+  }
+}
+}
+ }
